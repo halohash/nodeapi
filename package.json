@@ -1,0 +1,8 @@
+{
+  "name": "hashnode",
+  "version": "1.0.0",
+  "description": "A simple GitHub Pages api with node",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
