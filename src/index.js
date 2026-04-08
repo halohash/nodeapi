@@ -1,13 +1,18 @@
-const http = require('http');
+// index.js
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, World!');
-});
+async function fetchWorldOfText() {
+  try {
+    const response = await fetch("https://ourworldoftext.com/worldofhash?fetch=1");
 
-const PORT = 3000;
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
 
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
-});
+    const data = await response.text(); // or .json() if you expect JSON
+    console.log("Response:\n", data);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+fetchWorldOfText();
