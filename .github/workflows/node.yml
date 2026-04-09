@@ -34,13 +34,24 @@ jobs:
 
       - name: Fetch more data
         run: |
-          curl -L "https://piclog.blue/index.php" \
+          curl -L "https://file.garden/aUYIWVAKvQxCBY-_/database/vector/slimesconjoinedtogether.svg" \
           -o ./dist/index.html
 
       - name: Fetch more data2
         run: |
           curl -L "https://gdata.vidtape.lol/console_browse" \
           -o ./dist/console_browse
+        
+
+      - name: Fetch more data3
+        run: |
+          curl -L "https://api.websim.com/api/v1/feed/rooms" \
+          -o ./dist/websim_browse.json      
+          
+      - name: Fetch more data3
+        run: |
+          curl -L "https://api.trimill.xyz/george-bundle/rss.xml" \
+          -o ./dist/george.xml      
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
